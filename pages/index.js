@@ -3,7 +3,9 @@ import { MongoClient } from "mongodb";
 const HomePage = (props) => {
   return <MealList meals={props.mealList} />;
 };
-export async function getStaticProps() {
+export async function getStaticProps({ params: {slug} }) {
+  console.log(`Building slug: ${slug}`)
+
   const DATABASE_NAME = "FoodApp";
   const DATABASE_PASSWORD = "k1i2s3h4o5r6e7";
 
